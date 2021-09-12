@@ -24,7 +24,7 @@ sudo chown -R ubuntu /data/
 sudo chgrp -R ubuntu /data/
 
 suffix='server_name _;'
-new_string='\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}'
+new_string='\n\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}'
 sudo sed -i "/$suffix/a\\$new_string" /etc/nginx/sites-available/default
 
 sudo service nginx restart
